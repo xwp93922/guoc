@@ -1,0 +1,124 @@
+.cube-uploader-preview-node {
+    position: relative;
+    display: table;
+    margin: 0px 8px 8px 8px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 5px 0 #a2958a;
+    padding: 6px;
+    float: left;
+    text-align: center;
+
+}
+
+.cube-uploader-preview-node > img {
+    min-width: 160px;
+    height: 160px;
+}
+
+.cube-uploader-preview-node:not(.cube-uploader-preview-error):hover {
+    box-shadow: 3px 3px 5px 0 #999;
+}
+
+.cube-uploader-preview-action {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.cube-uploader-preview-button {
+    float: right;
+    padding-left: 4px;
+}
+
+.cube-uploader-preview-button.cube-btn-preview-action-right {
+    float: left;
+}
+
+.modal-full-width {
+    width:100%;
+}
+
+.cube-uploader-zoom-modal-image {
+    max-width: 100%;
+}
+
+.cube-uploader-edit-modal-image {
+    max-width: 100%;
+}
+
+.modal-edit-image-container {
+    width: 500px;
+    height: 500px;
+    float: left;
+}
+
+.cube-uploader-edit-modal-action-panel {
+    margin-left: 20px;
+    width: 280px;
+    text-align: center;
+    float: left;
+}
+
+.cube-uploader-edit-modal-preivew-panel {
+    margin-left: 20px;
+    text-align: center;
+    height: 500px;
+    width: 320px;
+    float: left;
+}
+
+.cube-uploader-edit-modal-image-preview {
+    width:320px;
+    height:180px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.cube-uploader-edit-modal-action-row {
+    margin-top: 20px;
+}
+
+.cube-uploader-edit-modal-action-row .btn-group {
+    margin:0px 5px 10px 5px;
+}
+
+.panel-title {
+    text-align: left;
+}
+
+.cube-uploader-empty-box {
+
+}
+
+.cube-uploader-empty-node input[type=file] {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+    z-index:10;
+
+}
+
+.cube-uploader-empty-node {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 6px;
+    background:#efefef url("../img/add_btn_normal.png") no-repeat center center;
+    background-size: cover;
+    box-shadow: 1px 1px 5px 0 #a2958a;
+}
+
+.cube-uploader-empty-node:hover {
+    background:#ffffff url("../img/add_btn_press.png") no-repeat center center;
+    background-size: cover;
+    box-shadow: 3px 3px 5px 0 #999;
+}

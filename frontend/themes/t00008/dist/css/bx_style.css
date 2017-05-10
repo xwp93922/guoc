@@ -1,0 +1,32 @@
+.bx-viewport{
+    border:none!important;
+    left:0!important;
+    box-shadow: none!important;
+}
+.banner-slider .slide{
+    margin-right: 0 !important;
+}
+
+.bx-wrapper{
+    margin-bottom:0;
+}
+.bx-pager{
+    position:absolute!important;
+    bottom:10px!important;
+}
+
+.bx-pager-item a{
+    color:transparent;
+    background: url(../img/pagination.png) no-repeat top!important;
+    overflow: hidden;
+    width:13px!important;
+    height:13px!important;
+}
+.bx-pager-item a.active,
+.bx-pager-item a:hover.active {
+    background-position: 0 -13px!important;
+}
+
+.sever-range-swipe{
+    position:relative;
+}

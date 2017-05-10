@@ -1,0 +1,111 @@
+@charset "utf-8";
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td,button,textarea
+{margin: 0; padding: 0; border: 0; outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;}
+ul, ol{list-style: none;}
+button{background:none;border:none;font-family: "Microsoft YaHei",Arial,"黑体"}
+
+
+img{width:100%;border: 0;vertical-align: middle;}
+
+a{color: #333;text-decoration: none;}
+a,dl,li,div{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+img{vertical-align: middle;width:100%;}
+html{
+    -webkit-font-smoothing:antialiased;font-family: "Microsoft YaHei",Arial,"黑体";
+}
+body{
+    font-size:14px;
+    /*-webkit-user-select:none;*/
+    /*-moz-user-select:none;*/
+    /*-ms-user-select:none;*/
+    /*user-select:none;*/
+
+}
+html,body{height:100%;}
+
+i, em, b { font-style:normal; font-weight:normal;}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1}
+
+.flex-frame{max-width:1920px;min-width:320px;min-height:100%;padding-bottom:460px; margin:0 auto; position:relative;}
+
+.ht_click-active:active{ filter:Alpha(opacity=80);opacity: 0.8;  }
+.ht_nowrap{ overflow: hidden;  text-overflow:ellipsis;  white-space: nowrap; }
+.ht_none{display:none!important;}
+.ht_visible{display:block!important;}
+
+
+.cr_first-df{
+    color:#f42837;
+}
+.cr_second-df{
+    color:#a29478;
+}
+
+.img-case43{
+    display:block;
+    width:100%;
+    height:0;
+    padding-bottom:75%!important;
+    overflow: hidden;
+}
+.img-case21{
+    display:block;
+    width:100%;
+    height:0;
+    padding-bottom:50%!important;
+    overflow: hidden;
+}
+.img-case55{
+    display:block;
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+    overflow: hidden;
+}
+.img-case54{
+    display:block;
+    width:100%;
+    height:0;
+    padding-bottom:80%;
+    overflow: hidden;
+}
+.img-case32{
+    display:block;
+    width:100%;
+    height:0;
+    padding-bottom:66.66%;
+    overflow: hidden;
+}
+.shadow-df{
+    -webkit-box-shadow: 4px 4px 10px  #aaa;
+    -moz-box-shadow:4px 4px 10px  #aaa;
+    box-shadow: 4px 4px 10px  #aaa;
+}
+
+.font30_bold{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.visibleNav{
+    display:block!important;
+
+}
+.pad-L10{
+    padding-left:10px;
+}
+.float-lt{
+    float:left;
+}
+.float-rt{
+    float:right;
+}
+.font18{
+    font-size:18px!important;
+}

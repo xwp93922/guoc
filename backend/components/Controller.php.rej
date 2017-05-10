@@ -1,0 +1,10 @@
+diff a/backend/components/Controller.php b/backend/components/Controller.php	(rejected hunks)
+@@ -16,7 +16,7 @@
+     public function beforeAction($action)
+     {
+         if (parent::beforeAction($action)) {
+-
++			\Yii::$app->cache->flush();
+             if (!ThemeHelper::setThemeByCode("adminlte")) {
+                 return false;
+             }
