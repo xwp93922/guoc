@@ -210,7 +210,7 @@ class InitHelper {
     		if(GhSite::find()->where(['id'=>$site_id])->count()==0){
 	    		self::batchInsert('gh_site', [ 'id','user_id', 'host_name', 'type', 'plan_id', 'plan_created_at', 'plan_expired_at', 'status', 'created_at', 'updated_at'],
 	    		[
-	    			[$site_id,$site_id, $hostname, 1, 1, 0, 0, 10, $now, $now]
+	    			[$site_id,$site_id, $hostname, 2, 1, 0, 0, 10, $now, $now]
 	    		]);
     		}
     		self::batchInsert('cms_site',['site_id','lang_id','theme_id','name','logo','footer_logo','description','created_at','updated_at'],
@@ -224,9 +224,10 @@ class InitHelper {
 	    		]);
     		}
     		if(GhTheme::find()->where(['id'=>$site_id])->count()==0){
-	    		self::batchInsert('gh_theme', ['category_id', 'name', 'code', 'desc', 'price_origin', 'price', 'features', 'home_features', 'image_pc', 'image_pad', 'image_phone', 'image_addon', 'type', 'necessary', 'status', 'sort_val', 'created_at', 'updated_at'],
+
+	    		self::batchInsert('gh_theme', ['id','category_id', 'name', 'code', 'desc', 'price_origin', 'price', 'features', 'image_pc', 'image_pad', 'image_phone', 'image_addon', 'type', 'necessary', 'status', 'sort_val', 'created_at', 'updated_at'],
 	    		[
-	    			[ '1', '博赛智能建站模板', 't' . str_pad($site_id,5,"0",STR_PAD_LEFT), '光合科技', '0.00', '0.00', '1001,2001,3001,4001,4002,4003,5001,6001,7001,8001,9001,10001','3001,4001,4002,4003,5001,6001,8001,9001,20001', '/uploads/0/theme/images/20170316/a0b5ddc8-cbf6-60fc-ecd9-0c8d0203e06f.png', NULL, NULL, NULL, '0', '1', '10', '100', $now, $now]			
+	    			[$site_id,'1', '博赛智能建站模板', 't' . str_pad($site_id,5,"0",STR_PAD_LEFT), '光合科技', '0.00', '0.00', '1001,2001,3001,4001,4002,4003,5001,6001,7001,8001,9001,10001', '/uploads/0/theme/images/20170316/a0b5ddc8-cbf6-60fc-ecd9-0c8d0203e06f.png', NULL, NULL, NULL, '0', '1', '10', '100', $now, $now]			
 	    		]);
     		}
     		self::batchInsert('cms_page_contact',[ 'lang_id', 'site_id', 'name', 'phone', 'longitude', 'latitude', 'address', 'email', 'qq', 'zipcode', 'wxopenid', 'banner', 'status', 'sort_val', 'created_at', 'updated_at'],
@@ -234,17 +235,12 @@ class InitHelper {
     			[$lang_id, $site_id, '博赛智能建站模板', '13800000000', '113.944174', '22.544317', '广东省深圳市南山区粤海街道科苑路9号园西工业区', '123456@qq.com', '123456', '000000', '/uploads/1/contact/images/20170316/277b0165-80e7-6803-cb4b-1ec5866c92a1.png', '/uploads/1/contact/images/20170317/89e9bb2f-e48f-7353-49ba-0b0c8c20cf06.png', 10, 100,$now,$now]    							
     		]);  
     	}
-    	/* if(User::find()->where(["like","username","admin"])->count()==0){
-    		self::batchInsert('user',['username', 'nickname', 'ext_type', 'ext_id', 'avatar', 'avatar_key', 'phone', 'email', 'password_hash', 'password_reset_token', 'auth_key', 'access_token', 'type', 'level', 'status', 'last_login_at', 'last_login_ip', 'created_at', 'updated_at'],
+    	if(User::find()->where(["like","username","admin"])->count()==0){
+    		self::batchInsert('user',['id','username', 'nickname', 'ext_type', 'ext_id', 'avatar', 'avatar_key', 'phone', 'email', 'password_hash', 'password_reset_token', 'auth_key', 'access_token', 'type', 'level', 'status', 'last_login_at', 'last_login_ip', 'created_at', 'updated_at'],
     				[
-    						['admin1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$.r/JlG/FGottRqUzlcjOyOlLsNC0pkvJ3Z2gDnoig2l1HQsFhhpWW', NULL, '7E5TN0SIgAbyxHht5We6Ut18LYb3q9Cf', NULL, 0, 0, 10, 0, NULL, 1490838461, 1490838461],
-    						['admin2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$CdJkZ4LXOOLcDc6qKG6CN.KCjJGDxHXx20VFQmoFIsSSjtPutRj.i', NULL, '1SyWci__oE-UyclOPMvjw5KRYmeSEIl-', NULL, 0, 0, 10, 0, NULL, 1490838471, 1490838471],
-    						['admin3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$Q0vwIUr9aGFnhcsYmdIQhu.kAFYbY7cAy6UfpO68bXyPJTkVNiv4q', NULL, '_9BW9wiCQ6k9kWh_Q35pfPAyJ3BhXFU-', NULL, 0, 0, 10, 0, NULL, 1490838479, 1490838479],
-    						['admin4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$Qk5z9QAF95rXqbEQqxTwbOiqrccg8Af76UZ7gge9lr39gYyz5dMS.', NULL, '-JTBtBW-wIbwYC_HAMdRibeykIe-Mb-7', NULL, 0, 0, 10, 0, NULL, 1490838487, 1490838487],
-    						['admin5', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$s8/D0lG4LZxfyy791V6U6eJ/oJlCxHz2YPSGePYWjj7z4IQWOXIWO', NULL, 'AaiIog_YZQQb47Wpnjd4Phiq_f9zlsvF', NULL, 0, 0, 10, 0, NULL, 1490838495, 1490838495],
-    						['admin6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$/MLJ4gZhT90x2diQGRSdyOttLTOOMxDnplc6rwQXgyvtCsLo0WKsy', NULL, 'ndCot4_3ufBedkWlAW0e7_lgseGv6bOC', NULL, 0, 0, 10, 0, NULL, 1490838501, 1490838501]
+    						[$site_id,'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$13$rL6n0LGUiUhyXA9kzZ2tRusO86eOax8lRFfpR6Bdwyr/FHk2zNQfS', NULL, '7E5TN0SIgAbyxHht5We6Ut18LYb3q9Cf', NULL, 0, 0, 10, 0, NULL, 1490838461, 1490838461],
     				]);
-    	} */
+    	} 
     	$where = [
     			'site_id' => $site_id,
     			'lang_id' => $lang_id,

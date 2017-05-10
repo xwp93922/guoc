@@ -55,11 +55,11 @@ class SiteCore {
       		\Yii::$app->session['serial_id']=$_GET['sname'];
       		$paramSiteId=GhSite::find()->where(['serial_id'=>$_GET['sname']])->asArray()->one()['id'];
       		if(empty($paramSiteId)){
-      			$paramSiteId=1;
+      			$paramSiteId=8;
       		}
       	}else{
       		\Yii::$app->session['serial_id']='';
-      		$paramSiteId=1;
+      		$paramSiteId=8;
       	}
       	//中英文切换
       	\Yii::$app->language= isset(Yii::$app->session['lang'])?Yii::$app->session['lang']:'zh-CN';
@@ -76,19 +76,21 @@ class SiteCore {
         }
 
         $site = [];
-        if ($hostName == "localhost" || $hostName == "127.0.0.1" || $hostName == "demo.bothsite.com") {
-        	//InitHelper::initDefalutData($paramSiteId);
+        if ($hostName == "demo.bothsite.com") {
+        	//InitHelper::initDefalutData($paramSiteId,'http://'.$hostName);
             if ($paramSiteId != 0) {
                 $site = $this->loadGhSiteById($paramSiteId);
             }
         }
         else {
+        	$site = $this->loadGhSiteByHostName('http://'.$hostName);
+        	if (empty($site)) {
+        		//不存在对应的站点
+        		InitHelper::initDefalutData($paramSiteId,'http://'.$hostName);
+        	}
         	$site = $this->loadGhSiteByHostName('http://'.$hostName); 
-        }
-        if (empty($site)) {
-            //不存在对应的站点
-            throw new NotFoundHttpException(\Yii::t('app', '您访问的站点不存在或已过期'));
-        }
+        }              
+       
         //初始化theme
         $siteId = $site['id'];
         $siteInfo['cmsSite'] = CmsSite::find()->where(['site_id'=>$siteId])->asArray()->one();
@@ -102,12 +104,11 @@ class SiteCore {
             $siteInfo['cmsSite']['lang_id'] = $paramLangId;
         }        
         if(CmsSite::find()->where(['lang_id'=>$paramLangId,'site_id'=>$siteId])->count()==0){
-        	InitHelper::initDefalutData($site['id'],$site['host_name'],$paramLangId);
+        	//InitHelper::initDefalutData($site['id'],$site['host_name'],$paramLangId);
         	$siteInfo['cmsSite']=CmsSite::find()->where(['site_id'=>$siteId,'lang_id'=>$lang_id])->asArray()->one();
         }
         //获取其他数据
         $info=$this->loadCmsSiteInfo($siteId,$lang_id);
-        
         $session = Yii::$app->session;
         if (!$session->has('phone'))
         {
