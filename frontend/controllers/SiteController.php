@@ -387,7 +387,7 @@ class SiteController extends Controller
             'lang_id' => $this->langId,
             'status' => 10,
         ];
-		die();
+		
         $about = CmsPageAbout::find()->with(['teams','events'])->where($where)->asArray()->one();
         //获取所有子级菜单
         $about_list = CmsPage::find()->where($where)->andWhere(['type'=>CmsPage::TYPE_ABOUT ])->andWhere( ['not', ['parent_id' => 0]])->asArray()->all();
@@ -399,6 +399,7 @@ class SiteController extends Controller
         	$about_now = CmsPage::find()->where($where)->andwhere(['type'=>CmsPage::TYPE_ABOUT,'id'=>$now_id])->asArray()->one();
         }
         $recommend=DataHelper::getRecommend(10, $where);
+        die();
         return $this->render('about-us-page', [
                     'about' => $about,
         			'about_now'=>$about_now,
