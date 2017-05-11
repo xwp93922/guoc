@@ -116,7 +116,7 @@ class SiteHelper {
     static public function getImgSrc($img) { 
         if (!empty($img))
         {
-            return \Yii::getAlias('@web').$img;
+            return \Yii::getAlias('@web').'../../backend/web'.$img;
             
             //return 'http://localhost:8080/ocean/backend/web'.$img;
         }
