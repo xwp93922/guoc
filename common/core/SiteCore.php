@@ -84,7 +84,7 @@ class SiteCore {
         }
         else {
         	$site = $this->loadGhSiteByHostName('http://'.$hostName);
-        	var_dump($site);
+        	
         	if (empty($site)) {
         		//不存在对应的站点
         		InitHelper::initDefalutData($paramSiteId,'http://'.$hostName);
