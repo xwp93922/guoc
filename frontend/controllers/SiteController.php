@@ -398,8 +398,7 @@ class SiteController extends Controller
         }else{
         	$about_now = CmsPage::find()->where($where)->andwhere(['type'=>CmsPage::TYPE_ABOUT,'id'=>$now_id])->asArray()->one();
         }
-        $recommend=DataHelper::getRecommend(10, $where);
-        die();
+        $recommend=DataHelper::getRecommend(10, $where);       
         return $this->render('about-us-page', [
                     'about' => $about,
         			'about_now'=>$about_now,
