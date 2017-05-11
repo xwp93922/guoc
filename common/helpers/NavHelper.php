@@ -187,7 +187,6 @@ class NavHelper
     				}else{
     					return Url::to(['site/list','id'=>$nav['ext_id'],'sname'=>$id]);
     				}     				
-    				return Url::to(['site/list','sname'=>$id, 'id'=>$nav['ext_id']]);
     				break;
     			case CmsNav::TYPE_PAGE:
     				if($page=CmsPage::find()->where(['name'=>$nav['name']])->asArray()->one()){
@@ -228,7 +227,9 @@ class NavHelper
     				return Url::to(['site/index']);
     				break;
     			case CmsNav::TYPE_CATEGORY:
-    		if($cate=CmsCategory::find()->where(['id'=>$nav['ext_id']])->asArray()->one()){
+    				var_dump('111');
+    				if($cate=CmsCategory::find()->where(['id'=>$nav['ext_id']])->asArray()->one()){
+    					var_dump('222');
     					return self::getCateUrl($cate);
     				}else{
     					return Url::to(['site/list','id'=>$nav['ext_id']]);
