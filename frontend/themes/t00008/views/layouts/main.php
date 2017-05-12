@@ -120,7 +120,7 @@ $('#join').on('click',function(){
 	 var txt=$('textarea ').val();
 	 var cap=$('#cap').val();
 	 $.post(
-	            '<?php echo Url::toRoute(['site/info','sname'=>$_SESSION['serial_id']])?>',
+	            '<?php echo Url::toRoute(['site/info'])?>',
 	            {
 	                name:name,
 	                phone:phone,
