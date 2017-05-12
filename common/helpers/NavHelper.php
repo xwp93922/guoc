@@ -280,6 +280,9 @@ class NavHelper
                 case CmsCategory::CATE_NEWS:
                     return Url::to(['site/list','sname'=>$id]);
                     break;
+                case CmsCategory::CATE_QUESTION :
+	                return Url::to(['site/problem','sname'=>$id]);
+	                break;
     				default:return Url::to(['site/list','sname'=>$id]);
 
     				break;
@@ -293,14 +296,17 @@ class NavHelper
     			case CmsCategory::CATE_NEWS:
     				return Url::to(['site/list','id'=>$cate['id']]);
     				break;
-    				case CmsCategory::CATE_BRAND:
-    					return Url::to(['site/brand']);
-    					break;
-    				case CmsCategory::CATE_NEWS:
-    					return Url::to(['site/list']);
-    					break;
-    				default:return Url::to(['site/list','id'=>$cate['id']]);
+    			case CmsCategory::CATE_BRAND:
+    				return Url::to(['site/brand']);
     				break;
+    			case CmsCategory::CATE_NEWS:
+    				return Url::to(['site/list']);
+    				break;
+    			case CmsCategory::CATE_QUESTION :
+    				return Url::to(['site/problem']);
+    				break;
+    			default:return Url::to(['site/list','id'=>$cate['id']]);
+    			break;
     		}
     	}
     
