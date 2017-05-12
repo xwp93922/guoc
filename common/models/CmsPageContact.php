@@ -75,7 +75,6 @@ class CmsPageContact extends \yii\db\ActiveRecord
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
             [['email'], 'email'],
-            [['phone'],'match','pattern'=>'/^13[\d]{9}$|^14[5,7]{1}\d{8}$|^15[^4]{1}\d{8}$|^17[0,6,7,8]{1}\d{8}$|^18[\d]{9}$|^([0-9]{3,4}-)?[0-9]{7,8}$/'],
             [['wxopenid_file','banner_file','map_img_file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxSize' => 1024*1024*2],
         ];
     }
