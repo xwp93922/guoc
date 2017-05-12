@@ -23,7 +23,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
                             <?php if($about_list){ ?>
                             <?php foreach ($about_list as $l){?>
                             <li class="li-df"><a href="<?= Url::to(['site/contact', 'sname'=>$_SESSION['serial_id'],'con_id' => $l['id']]) ?>" 
-                            class="row-item <?php if($list_now['id']==$l['id']) echo 'choice-on'?>"><?= $l['name'] ?><i class="case-df"><img src="<?= SiteHelper::getImgSrc($l['cover']) ?>"></i></a></li>
+                            class="row-item <?php if($list_now['id']==$l['id']) echo 'choice-on'?>"><?= $l['name'] ?><i class="case-df"><img src="<?= $bundle->baseUrl ?>/img/ico_white_right.png "></i></a></li>
                             <?php }?>
                             <?php }?>
                         </ul>
