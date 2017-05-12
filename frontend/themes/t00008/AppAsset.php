@@ -16,6 +16,7 @@ class AppAsset extends AssetBundle
         'css/bx_style.css?code=t00008',
         'css/default.css?code=t00008',
         'css/my_style.css?code=t00008',
+    	'css/liMarquee.css?code=t00008',	
     ];
     public $js = [
         'js/jquery.min.js?code=t00008',

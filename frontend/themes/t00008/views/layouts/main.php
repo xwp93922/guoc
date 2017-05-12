@@ -36,7 +36,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
 	        <div class="header_df">
 	            <!--header-wrap-->
 	            <div class="header-wrap">
-	                <a class="logo-box" href="<?= Url::to(['site/index','sname'=>$_SESSION['serial_id']]) ?>">
+	                <a class="logo-box" href="<?= Url::to(['site/index']) ?>">
 	                    <p class="logo-square"></p>
 	                    <i class="logo-triangle"></i>
 	                    <img class="img-logo" src="<?= SiteHelper::getImgSrc($this->context->mainDatas['cmsSite']['logo']) ?>">
@@ -54,7 +54,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
 	            </div>
 	            <!--header-phone-->
 	            <div class="header-phone">
-	                <a href="<?= Url::to(['site/index','sname'=>$_SESSION['serial_id']]) ?>" class="phone-logoBox">
+	                <a href="<?= Url::to(['site/index']) ?>" class="phone-logoBox">
 	                    <img src="<?= SiteHelper::getImgSrc($this->context->mainDatas['cmsSite']['logo']) ?>">
 	                </a>
 	                <div class="phone-hd-rt">
@@ -80,16 +80,16 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
                 </p>
                 <div class="footer-content">
                     <ul class="ft-content-nav ">
-                        <li><a href="<?= Url::to(['site/index','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">芋见甜品首页</a>|</li>
-                        <li><a href="<?= Url::to(['site/about','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">品牌起源</a>|</li>
-                        <li><a href="<?= Url::to(['site/products','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">甜品展示</a>|</li>
-                        <li><a href="<?= Url::to(['site/adv','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">加盟优势</a>|</li>
-                        <li><a href="<?= Url::to(['site/policy','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">加盟政策</a>|</li>
-                        <li><a href="<?= Url::to(['site/index','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">在线加盟</a>|</li>
-                        <li><a href="<?= Url::to(['site/list','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">加盟资讯</a>|</li>
-                        <li><a href="<?= Url::to(['site/index','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">荣誉证书</a>|</li>
-                        <li><a href="<?= Url::to(['site/problem','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">加盟问题</a>|</li>
-                        <li><a href="<?= Url::to(['site/about','sname'=>$_SESSION['serial_id']]) ?>" class="ht_click-active">关于我们</a></li>
+                        <li><a href="<?= Url::to(['site/index']) ?>" class="ht_click-active">芋见甜品首页</a>|</li>
+                        <li><a href="<?= Url::to(['site/about']) ?>" class="ht_click-active">品牌起源</a>|</li>
+                        <li><a href="<?= Url::to(['site/products']) ?>" class="ht_click-active">甜品展示</a>|</li>
+                        <li><a href="<?= Url::to(['site/adv']) ?>" class="ht_click-active">加盟优势</a>|</li>
+                        <li><a href="<?= Url::to(['site/policy']) ?>" class="ht_click-active">加盟政策</a>|</li>
+                        <li><a href="<?= Url::to(['site/index']) ?>" class="ht_click-active">在线加盟</a>|</li>
+                        <li><a href="<?= Url::to(['site/list']) ?>" class="ht_click-active">加盟资讯</a>|</li>
+                        <li><a href="<?= Url::to(['site/index']) ?>" class="ht_click-active">荣誉证书</a>|</li>
+                        <li><a href="<?= Url::to(['site/problem']) ?>" class="ht_click-active">加盟问题</a>|</li>
+                        <li><a href="<?= Url::to(['site/about']) ?>" class="ht_click-active">关于我们</a></li>
                     </ul>
                     <div class="footer-info">
                         <img class="footer-logo" src="<?= SiteHelper::getImgSrc($this->context->mainDatas['cmsSite']['footer_logo']) ?>">

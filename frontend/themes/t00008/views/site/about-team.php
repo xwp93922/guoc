@@ -17,7 +17,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
                     <div class="aside-block">
                         <p class="title-df">芋见甜品简介<img src="<?= $bundle->baseUrl ?>/img/ico_square_white.png"></p>
                         <ul class="list-df">
-                        	 <li class="li-df"><a href="<?= Url::to(['site/team','sname'=>$_SESSION['serial_id']]) ?>" class="row-item choice-on">精英团队<i class="case-df"><img src="<?= $bundle->baseUrl ?>/img/ico_white_right.png"></i></a></li>
+                        	 <li class="li-df"><a href="<?= Url::to(['site/team']) ?>" class="row-item choice-on">精英团队<i class="case-df"><img src="<?= $bundle->baseUrl ?>/img/ico_white_right.png"></i></a></li>
                        		 <?php foreach ($about_list as $l){?>
                             <li class="li-df"><a href="<?= Url::to(['site/about', 'sname'=>$_SESSION['serial_id'],'about_id' => $l['id']]) ?>" class="row-item"><?= $l['name'] ?><i class="case-df"><img src="<?= SiteHelper::getImgSrc($l['cover']) ?>"></i></a></li>
                             <?php }?>
