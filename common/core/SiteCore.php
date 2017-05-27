@@ -83,6 +83,9 @@ class SiteCore {
             }
         }
         else {
+         	if (strpos($hostName, "www.") === 0) {
+            	$hostName = str_replace("www.", '', $hostName);
+        	}
         	$site = $this->loadGhSiteByHostName('http://'.$hostName);
         	
         	if (empty($site)) {
