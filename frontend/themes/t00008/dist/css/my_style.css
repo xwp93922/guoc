@@ -1,5 +1,36 @@
 @charset "utf-8";
 /******************************* 首页 ************************************/
+		
+/*float-box-rt*/
+.float-box-rt{
+    margin-top:-75px;
+    position:fixed;
+    right:10px;
+    top:70%;
+    z-index:200;
+}
+
+
+
+
+.fl-box-item{
+    display:block;
+    width:50px;
+    height:50px;
+    margin-bottom: 2px;
+}
+
+#go-top-item{
+    background:url(../img/ho-goTop.png) no-repeat center #d0d0d0;
+    cursor:pointer;
+
+}
+
+.goTOp_on{
+    background-image:url(../img/ho-goTop_on.png) !important ;
+    background-color:#fff!important;
+}
+
 
 .phone-hide{
     display:block;
@@ -25,31 +56,32 @@
     position:relative;
 }
 .logo-square{
-    position:absolute;
-    left:0;
-    top:0;
-    width:180px;
-    height:98px;
-    background-color:#fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 98px;
+    background-color: #fff;
     z-index: 99;
+    border-top: 22px #f42837 solid;
 }
 .logo-triangle{
     position:absolute;
-    top:98px;
     left:0;
-    width:0;
-    border-width: 56px 90px;
-    border-color:#fff transparent transparent transparent;
-    border-style: solid;
+    top:26px;
     z-index: 100;
+    background: #fff;
+    width: 100%;
+    height: 170px;
+    border-radius: 0 0 90px 90px;
 }
 .header-wrap .img-logo{
-    position:absolute;
-    left:50%;
-    top:15px;
-    margin-left:-64px;
-    width:128px;
-    height:104px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    margin-left: -67px;
+    width: 135px;
+    height: 135px;
     z-index: 101;
 }
 .header-wrap .nav-box{
@@ -239,7 +271,7 @@
      text-align: justify;
 }
  .style-item-title1{
-     font-size:40px;
+     font-size:38px;
      color:#f0c100;
  }
  .style-item-title2{
@@ -264,6 +296,13 @@
     font-size:0;
     border-radius: 8px;
     cursor:pointer;
+}
+.img_case1_3{
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 133.3%!important;
+    overflow: hidden;
 }
 .item-btn span{
     display:inline-block;
@@ -368,11 +407,10 @@
     background:#b2b2b2;
     border-radius:20px;
     position:relative;
-    cursor:pointer;
 }
-/* .home-itemC .navItem:hover{
+.home-itemC .navItem:hover{
     background:#c2aa6a;
-} */
+}
 
 .item-triangle{
     display:none;
@@ -400,6 +438,7 @@
     width:16px;
     height:16px;
 }
+
 .ItemList-contain{
     max-width:1280px;
     padding:0 15px 60px;
@@ -413,7 +452,6 @@
 .ItemList-contain dl{
     border-radius:10px;
     overflow: hidden;
-    cursor:pointer;
 }
 .ItemList-contain dt{
     background:#fff;
@@ -429,11 +467,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.ItemList-contain dl:hover .ItemC-describe{
-    border-bottom-color:#c2aa6a;
-    color:#c2aa6a;
-    font-weight:600;
-}
+
 
 /*home-itemD*/
 .home-itemD{
@@ -527,7 +561,7 @@
     background:#0e0a08;
     padding-top:1px;
     padding-bottom:1px;
-    /* background:url(../img/itemF-bg.jpg) no-repeat center; */
+    background:url(../img/ho_itemF_bg.jpg) no-repeat center;
 }
 .itemF-box{
     max-width:846px;
@@ -845,7 +879,6 @@
     display:inline-block;
     width:37%;
     vertical-align: middle;
-    padding: 10px 20px;
 }
 .txt-img-img .item-third{
     display:inline-block;
@@ -937,18 +970,10 @@
 
 }
 .home-itemJ .ItemList-contain dl{
-    border-radius:4px;
+    border-radius:10px;
     overflow: hidden;
     padding:8px;
     background-color:#fff;
-    -webkit-box-shadow: 4px 4px 10px  #aaa;
-    -moz-box-shadow:4px 4px 10px  #aaa;
-    box-shadow: 4px 4px 10px  #aaa;
-}
-.home-itemJ .ItemList-contain dl:hover{
-    -webkit-box-shadow: 4px 4px 10px  #87744e;
-    -moz-box-shadow:4px 4px 10px  #87744e;
-    box-shadow: 4px 4px 10px  #87744e;
 }
 
 .home-itemJ .tel-blockBg{
@@ -1012,6 +1037,7 @@
 
 }
 .itemK_form textarea{
+    border:none;
     resize: none;
     background: #ffffff;
     width:100%;
@@ -1303,7 +1329,6 @@
     top:17px;
     width:128px;
     height:104px;
-    cursor: pointer;
 }
 .footer-QR{
     position:absolute;
@@ -1364,6 +1389,7 @@
         }
 
     }
+
 
     /*home-itemC*/
     .home-itemC .navItem{
@@ -1622,18 +1648,10 @@
         padding:20px 24px;
     }
     .home-item-content .item-lt{
-        display:none;
         width:100%;
     }
     .home-item-content .item-rt{
-
         width:100%;
-    }
-    .home-itemA .home-item-content .item-lt{
-        display:none;
-    }
-    .home-itemB .home-item-content .item-rt{
-        display: none;
     }
     .item-btn{
         margin:30px auto ;
@@ -1889,24 +1907,14 @@
         display:none;
     }
     .header_df{
-        height:80px;
+        height:100px;
     }
     /*header-phone*/
     .header-phone {
         display: block;
         padding: 15px 16px 0;
     }
-    .phone-hd-rt .rt-first {
-        font-size: 18px;
-        color: #333;
-        line-height: 18px;
-    }
-
-    .phone-logoBox img{
-        width:67px;
-        height:54px;
-    }
-        /*home-itemA*/
+    /*home-itemA*/
     .home-itemA .item-box{
         display:none
     }
@@ -1924,12 +1932,6 @@
     }
     .home-item-content .item-rt{
         width:100%;
-    }
-    .home-itemA .home-item-content .item-lt{
-        display:none;
-    }
-    .home-itemB .home-item-content .item-rt{
-        display: none;
     }
     .item-btn{
         margin:30px auto ;
@@ -2219,7 +2221,7 @@
 .con_1200 .content-box{
     float:right;
     width:78%;
-    padding:7px 20px 0 20px;
+    padding:30px 20px 0 20px;
     background:#fff;
 }
 .aside-block{
@@ -2257,6 +2259,7 @@
     font-size:14px;
     padding:0 10px;
     line-height:50px;
+    font-weight:bold;
 }
 .aside-block .row-item{
     display:block;
@@ -2267,43 +2270,39 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor:pointer;
-    color:#585858;
 }
 .aside-block .row-item .case-df{
-    display: block;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    margin-top: -8px;
-    text-align: center;
-    border-radius: 50%;
-    background: #d3d3d3;
-    line-height: 14px;
+    display:block;
+    width:22px;
+    height:22px;
+    position:absolute;
+    right:8px;
+    top:50%;
+    margin-top:-11px;
+    text-align:center;
+    border-radius:50%;
+    background:#d3d3d3;
+    line-height: 20px;
 
 }
 .aside-block .row-item img{
-    width: 5px;
-    height: 9px;
+    width:9px;
+    height:16px;
 
 }
 .aside-block .choice-on{
     color:#c2aa6a;
-    background:#ececed;
-    text-decoration: underline;
-}
 
+}
 .aside-recommend .choice-on{
-    background:none;
+    text-decoration: underline;
 }
 .aside-block .choice-on .case-df{
     background:#c2aa6a;
 }
 
 .aside-block .row-item:hover{
-    text-decoration: underline;
-    color:#c2aa6a;
+    background:#ececed;
 }
 .tel-block{
     background:#333333;
@@ -2339,11 +2338,6 @@
     padding:0;
     line-height:40px;
 }
-.li-df-a .row-item:hover{
-    color: #c2aa6a;
-    text-decoration: underline;
-}
-
 .li-df-a .ico-pot{
     position:absolute;
     left:16px;
@@ -2373,7 +2367,7 @@
     text-align: justify;
 }
 .article-content p{
-    line-height:26px;
+    line-height:30px;
     color:#534d41;
     margin-bottom:15px;
     white-space: pre-line;
@@ -2400,7 +2394,7 @@
     font-size:14px;
     color:#534d41;
     vertical-align: middle;
-    min-height:20px;
+
 }
 .visit-counts{
     display:inline-block;
@@ -2515,9 +2509,6 @@
     float:left;
 
 }
-.good-team dt{
-    border:solid 1px transparent;
-}
 
 .good-team .Item-describe{
     height:48px;
@@ -2528,13 +2519,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     border-bottom:solid 1px #d1d1d1;
-    color:#333;
-}
-.good-team:hover dt{
-    border-color:#c2aa6a;
-}
-.good-team:hover .Item-describe{
-   color:#c2aa6a;
+    color:#87744e;
 }
 /*****************芋见甜品  media *******************/
 
@@ -2685,9 +2670,7 @@
 .aside-block .li-img-df{
     padding:10px 18px 0 ;
     text-align: center;
-    cursor:pointer;
 }
-
 .li-img-df .row-describe{
     display:block;
     height:100%;
@@ -2698,9 +2681,6 @@
     white-space: nowrap;
     cursor:pointer;
 }
-.aside-block .li-img-df:hover .row-describe{
-    color:#c2aa6a;
-}
 .drinks-row{
     float:left;
     width:50%;
@@ -2708,23 +2688,17 @@
 }
 .drinks-row .row-case{
     display:block;
-    border:solid 1px #e2e2e2;
+    border:solid 1px #c9c9c9;
     padding:4px;
 }
-.drinks-row .row-case:hover{
-    border-color:#c2aa6a;
-}
 .drinks-row .row-describe{
-    height:50px;
-    line-height:50px;
-    font-size:16px;
+    height:80px;
+    line-height:80px;
+    font-size:20px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-    margin-bottom:0;
-}
-.drinks-row .describe-btn{
-    margin-bottom:20px;
+
 }
 .drinks-row .ask-now-btn{
     display:block;
@@ -2736,9 +2710,6 @@
     background:#c2aa6a;
     color:#fff;
     cursor:pointer;
-}
-.drinks-row .ask-now-btn:hover{
-    background:#f42837;
 }
 .drinks-row .understand-infoBtn{
     float:right;
@@ -2833,8 +2804,11 @@
 
 }
 .shop-slider-box .bx-wrapper{
-    float: left;
     width:100%;
+    margin:0!important;
+    padding-bottom:25%;
+    overflow: hidden;
+    height:0;
 }
 .shop-slider-box .ht-slide-case{
     display:block;
@@ -2891,8 +2865,8 @@
 }
 .shop-slider-content .slide{
     width:25%;
+    margin-right:10px;
 }
-
 
 /*gd-box-right*/
 .gd-box-right{
@@ -2935,13 +2909,9 @@
     width:25%;
     float:left;
     padding: 0 10px;
-    cursor:pointer;
 }
 .shop-color-list .img-case43{
     border:solid 1px #d1d1d1;
-}
-.shop-color-list li:hover p{
-    color:#c2aa6a;
 }
 .shop-color-list li p{
     text-align:center;
@@ -3179,7 +3149,7 @@
 }
 /************************** 新闻中心 *****************************************/
 .news-list-title{
-    font-size:14px;
+    font-size:16px;
     line-height:30px;
     position:relative;
 }
@@ -3199,7 +3169,7 @@
 }
 .news-li{
     border-bottom:solid 1px #eeeeee;
-    padding:12px 0;
+    padding:20px 0;
 }
 .news-li-first{
     border-bottom:none!important;
@@ -3230,8 +3200,8 @@
     float:left;
 }
 .ico_route{
-    width:12px;
-    height:12px;
+    width:16px;
+    height:16px;
     position:absolute;
     left:0;
     top:7px;
@@ -3315,6 +3285,30 @@
     width:50px;
     text-align:center
 }
+
+
+
+.newsDescribe_btRecommend{
+    float:left;
+    width: 78%;
+    padding: 30px  0 20px;
+    background: #fff;
+    margin-top:20px;
+}
+
+.newsDescribe_btRecommend .list-df li{
+    float:left;
+    width:25%;
+}
+.newsDescribe_btRecommend .title-df{
+    height:44px;
+    font-size:18px;
+    line-height:24px;
+}
+.newsDescribe_btRecommend .img-case43{
+    border:solid 1px #d1d1d1;
+}
+
 
 /*****************新闻中心  media *******************/
 
@@ -3553,74 +3547,4 @@
 }
 .benefit_form .row-5c{
     width:22%;
-}
-.example-takePage-bar{
-    height:110px;
-    padding-top:50px;
-    padding-left:10px;
-}
-.example-takePage-item{
-    float:left;
-    width:35px;
-    height:35px;
-    line-height:35px;
-    border:solid 1px #886a48;
-    border-bottom-width:2px;
-    margin-right:10px;
-    text-align:center;
-    color:#886a48;
-    cursor: pointer;
-}
-.example-page-choice{
-    background-color:#886a48;
-    color:#fff;
-}
-.newsDescribe_btRecommend{
-    float:left;
-    width: 78%;
-    padding: 30px  0 20px;
-    background: #fff;
-    margin-top:20px;
-}
-
-.newsDescribe_btRecommend .list-df li{
-    float:left;
-    width:25%;
-}
-.newsDescribe_btRecommend .title-df{
-    height:44px;
-    font-size:18px;
-    line-height:24px;
-}
-.newsDescribe_btRecommend .img-case43{
-    border:solid 1px #d1d1d1;
-}
-/*float-box-rt*/
-.float-box-rt{
-    margin-top:-75px;
-    position:fixed;
-    right:10px;
-    top:70%;
-    z-index:200;
-}
-
-
-
-
-.fl-box-item{
-    display:block;
-    width:50px;
-    height:50px;
-    margin-bottom: 2px;
-}
-
-#go-top-item{
-    background:url(../img/ho-goTop.png) no-repeat center #c2aa6a;
-    cursor:pointer;
-
-}
-
-.goTOp_on{
-    background-image:url(../img/ho-goTop_on.png) !important ;
-    background-color:#fff!important;
 }

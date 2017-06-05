@@ -54,7 +54,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
             <div class="home-itemB">
                 <div class="home-item-content clearfix">
                     <div class="item-lt">
-                        <i class="img-case43"><img src="<?= SiteHelper::getImgSrc($freeCate[1]['image_main'] ) ?>"/></i>
+                        <i class="img-case1_3"><img src="<?= SiteHelper::getImgSrc($freeCate[1]['image_main'] ) ?>"/></i>
                      </div>
 
                     <div class="item-rt">
