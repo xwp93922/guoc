@@ -34,8 +34,8 @@ class CmsJoinInfo extends \yii\db\ActiveRecord
     {
         return [
             [['site_id', 'lang_id', 'name', 'phone', 'mail', 'content', 'created_at'], 'required'],
-            [['site_id', 'lang_id', 'phone', 'created_at', 'status'], 'integer'],
-            [['content'], 'string'],
+            [['site_id', 'lang_id',  'created_at', 'status'], 'integer'],
+            [['phone','content'], 'string'],
             [['name'], 'string', 'max' => 10],
             [['mail'], 'string', 'max' => 50],
         ];

@@ -162,9 +162,9 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
                         <div class="ho-slider1">
                         <?php foreach ($systems as $system){?>
                             <dl class="slide clearfix">
-                                <dt class="slide-item-half"><i class="img-case54"><img src="<?= $bundle->baseUrl ?>/img/itemG-slide1.jpg"></i></dt>
+                                <dt class="slide-item-half"><i class="img-case54"><img src="<?= SiteHelper::getImgSrc($system['image_main']) ?>"></i></dt>
                                 <dd class="slide-item-half slide-txt">
-                                    <p class="title-imgCase"><img src="<?= $bundle->baseUrl ?>/img/logo.png"></p>
+                                    <p class="title-imgCase"><img src="<?= SiteHelper::getImgSrc($system['image_node']) ?>"></p>
                                     <div class="describe-content">
                                        <?= $system['content'] ?>
                                     </div>
