@@ -245,7 +245,7 @@ class SiteController extends Controller
         	}
         	//问题解答
         	$questions=[];
-        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->one();
+        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->andWhere( ['not', ['parent_id' => 0]])->one();
         	if(is_object( $category_ques)){
         		$questions=CmsArticle::find()->where($where)->andWhere(['category_id'=>$category_ques->id])->orderBy('sort_val asc')->asArray()->all();
         	}

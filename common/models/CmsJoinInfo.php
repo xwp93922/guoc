@@ -11,7 +11,7 @@ use Yii;
  * @property integer $site_id
  * @property integer $lang_id
  * @property string $name
- * @property integer $phone
+ * @property string $phone
  * @property string $mail
  * @property string $content
  * @property integer $created_at
