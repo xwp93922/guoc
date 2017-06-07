@@ -247,17 +247,13 @@ class SiteController extends Controller
         	$questions=[];
         	$page=\Yii::$app->request->get('page',1);
         	$pageSize=3;
-        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->one();
+        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->andWhere( ['not', ['parent_id' => 0]])->one();
         	$count=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->count();        	 
         	$params['questions_count']=ceil(($count/$pageSize));
-        	var_dump($category_ques->id);
         	if(is_object( $category_ques)){
-        		var_dump($category_ques->name);
         		$questions=CmsArticle::find()->Where(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
-        		var_dump($questions);
         	}
         	if(isset($_GET['page'])){
-        		var_dump('1111');
         		return json_encode($questions);
         	}
         	//加盟信息
