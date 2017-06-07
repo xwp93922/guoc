@@ -251,7 +251,7 @@ class SiteController extends Controller
         	$count=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->count();        	 
         	$params['questions_count']=ceil(($count/$pageSize));
         	if(is_object( $category_ques)){
-        		$questions=CmsArticle::find()->Where(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
+        		$questions=CmsArticle::find()->select(['name','left(content,40) as content'])->Where(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
         	}
         	if(isset($_GET['page'])){
         		return json_encode($questions);
