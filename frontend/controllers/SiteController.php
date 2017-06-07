@@ -253,9 +253,9 @@ class SiteController extends Controller
         	var_dump($category_ques->id);
         	if(is_object( $category_ques)){
         		var_dump($category_ques->name);
-        		$questions=CmsArticle::find()->where($where)->andWhere(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
+        		$questions=CmsArticle::find()->orderBy('sort_val asc')->asArray()->all();
+        		var_dump($questions);
         	}
-        	var_dump($questions);
         	if(isset($_GET['page'])){
         		var_dump('1111');
         		return json_encode($questions);
