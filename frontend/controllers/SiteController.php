@@ -253,6 +253,7 @@ class SiteController extends Controller
         	if(is_object( $category_ques)){
         		$questions=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
         	}
+        	var_dump($questions);
         	if(isset($_GET['page'])){
         		return json_encode($questions);
         	}
