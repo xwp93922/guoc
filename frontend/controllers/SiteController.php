@@ -257,6 +257,7 @@ class SiteController extends Controller
         	}
         	var_dump($questions);
         	if(isset($_GET['page'])){
+        		var_dump('1111');
         		return json_encode($questions);
         	}
         	//加盟信息
