@@ -250,6 +250,7 @@ class SiteController extends Controller
         	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->one();
         	$count=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->count();        	 
         	$params['questions_count']=ceil(($count/$pageSize));
+        	var_dump($category_ques->id);
         	if(is_object( $category_ques)){
         		$questions=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
         	}
