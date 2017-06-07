@@ -245,9 +245,16 @@ class SiteController extends Controller
         	}
         	//问题解答
         	$questions=[];
-        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->andWhere( ['not', ['parent_id' => 0]])->one();
+        	$page=\Yii::$app->request->get('page',1);
+        	$pageSize=3;
+        	$category_ques=$category_system=CmsCategory::find()->where($where)->andWhere(['type'=>'question'])->one();
+        	$count=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->count();        	 
+        	$params['questions_count']=ceil(($count/$pageSize));
         	if(is_object( $category_ques)){
-        		$questions=CmsArticle::find()->where($where)->andWhere(['category_id'=>$category_ques->id])->orderBy('sort_val asc')->asArray()->all();
+        		$questions=CmsArticle::find()->select(['name','left(content,40) as content'])->where($where)->andWhere(['category_id'=>$category_ques->id])->offset(($page-1)*$pageSize)->limit($pageSize)->orderBy('sort_val asc')->asArray()->all();
+        	}
+        	if(isset($_GET['page'])){
+        		return json_encode($questions);
         	}
         	//加盟信息
         	$join_infos=CmsJoinInfo::find()->where($where)->orderBy('created_at desc')->asArray()->all();

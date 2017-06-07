@@ -285,7 +285,7 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
                         <!--itemK-rt-->
                         <div class="itemK-rt">
                             <p class="title-24">甜品加盟常见问题解答</p>
-                            <ul class="questionList">
+                            <ul class="questionList" rel='<?= $questions_count ?>'>
                             <?php foreach ($questions as $question){?>
                                 <li>
                                     <p class="question"><label>问</label><?= $question['name'] ?></p>
@@ -363,7 +363,47 @@ $bundle = frontend\themes\t00008\AppAsset::register($this);
 		</div>
 <?php $this->beginBlock('test') ?>  
      setNavActive('<?php echo CmsNav::TYPE_HOMEPAGE?>');
-
+var page=1;
+	$('#next').on('click',function(){
+		page++;
+		if(page>$('.questionList').attr('rel')){
+			page=$('.questionList').attr('rel');
+		}
+		$.get(
+			'<?= Url::toRoute(['site/index','sname'=>$_SESSION['serial_id']]) ?>',
+			{
+				'page':page
+			},
+			function(data){
+				var msg=eval('(' + data + ')');
+				var html='';
+				$.each(msg,function(index,value){
+					html+="<li><p class='question'><label>问</label>"+value['name']+"</p><div class='answer'><label>答</label>"+value['content']+"...</div></li>"
+					$('.questionList').html(html);
+				})
+			}
+		)
+	})
+	$('#prev').on('click',function(){
+		page--;
+		if(page<1){
+			page=1;
+		}
+		$.get(
+			'<?= Url::toRoute(['site/index','sname'=>$_SESSION['serial_id']]) ?>',
+			{
+				'page':page
+			},
+			function(data){
+				var msg=eval('(' + data + ')');
+				var html='';
+				$.each(msg,function(index,value){
+					html+="<li><p class='question'><label>问</label>"+value['name']+"</p><div class='answer'><label>答</label>"+value['content']+"...</div></li>"
+					$('.questionList').html(html);
+				})
+			}
+		)
+	})
 <?php $this->endBlock() ?>  
 <?php $this->registerJs($this->blocks['test'], \yii\web\View::POS_END); ?>
 
